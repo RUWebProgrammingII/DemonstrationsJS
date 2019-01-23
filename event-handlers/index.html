@@ -5,6 +5,20 @@
         <title>JS Events Testing Document</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
         <style>
+            @keyframes rotate {
+                from {
+                    transform: rotateZ(0deg);
+                }
+                to {
+                    transform: rotateZ(360deg);
+                }
+            }
+            .rotate {
+                animation-name: rotate;
+                animation-duration: 3s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
             body {
                 padding: 20px;
             }
@@ -24,6 +38,10 @@
             <div class="form-group">
                 <input type="text" name="input-4" id="input-4" class="form-control" placeholder="Enter your data..." />
             </div>
+            <input type="hidden" value="top-secret" />
+            <input type="hidden" value="top-secret" />
+            <input type="hidden" value="top-secret" />
+            
             <div class="form-group">
                 <input type="submit" value="Click me!" class="btn btn-dark" />
             </div>
