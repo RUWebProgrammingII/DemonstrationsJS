@@ -15,3 +15,5 @@
 // 6. Register a parent handler on a div with class parent
 
 // 7. Register a child handler within the div with class child and prevent bubbling vs. NOT
+
+// 8. Click the button, but prevent it from submitting the form

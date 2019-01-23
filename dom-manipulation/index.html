@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JS DOM Testing Document</title>
+        <style>
+            .red {
+                background-color: red;
+                color: white;
+            }
+            .blue {
+                background-color: blue;
+                color: white;
+            }
+            .item {
+                width: 100px;
+                height: 100px;
+                border: dashed 2px red;
+            }
+            .triangle {
+                position: relative;
+                left: 20px;
+                transform: rotateZ(45deg);
+                margin: 60px 0;
+            }
+            .fiery {
+                background-image: linear-gradient(red, yellow);
+            }
+            table {
+                width: 100%;
+            }
+            table thead {
+                background-color: rgba(155, 155, 155, .5);
+            }
+            form input:not([type="submit"]) {
+                width: 50%;
+                border-radius: 5px;
+                font-size: 0.8em;
+                display: block;
+                padding: 10px;
+                margin: 10px 0;
+            }
+            input[type="submit"] {
+                font-size: 1em;
+                padding: 20px;
+                width: 100px;
+                height: 80px;
+            }
+            .form-container {
+                padding: 10px;
+                border: solid .5px black;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="my-item" class="item"></div>
+        <div class="triangle item"></div>
+        <div class="triangle item"></div>
+        <div class="triangle item"></div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <p data-zup="ZUP"></p>
+        <p data-zup="ZUP"></p>
+        <p data-zup="ZUP"></p>
+        <p data-zup="ZUP"></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Amount</th>
+                    <th>Payment method</th>
+                    <th>Date of transfer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2000$</td>
+                    <td>CC</td>
+                    <td>01.01.2019 10:01:22</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>113$</td>
+                    <td>CC</td>
+                    <td>02.02.2019 12:11:34</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2000$</td>
+                    <td>Cash</td>
+                    <td>15.01.2019 23:09:27</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>50$</td>
+                    <td>CC</td>
+                    <td>03.01.2019 12:01:22</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-container">
+            <h2>My form</h2>
+            <form class="" action="index.html" method="post">
+                <input type="text" id="username" name="username" placeholder="Enter your username..." />
+                <input type="password" id="password" name="password" placeholder="Enter your password..." />
+                <input type="password" id="password-repeat" name="password-repeat" placeholder="Enter your password again..." />
+                <input type="submit" id="submit-btn" />
+            </form>
+        </div>
+        <div class="item red"></div>
+        <div class="item red"></div>
+        <div class="item red"></div>
+        <div class="item red"></div>
+
+        <script src="dom_manipulation_example_1.js" charset="utf-8"></script>
+    </body>
+</html>
