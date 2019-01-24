@@ -18,7 +18,7 @@ var triangles = document.getElementsByClassName('triangle');
 changeStyle(triangles, 'backgroundColor', 'blue');
 
 // 3. Remove element by id my-item using old method removeChild() and new method remove()
-myItem.remove();
+// myItem.remove();
 
 // 4. Get all paragraphs and add border around them
 var paragraphs = document.getElementsByTagName('p');
@@ -40,10 +40,29 @@ for (var i = 0; i < evenTableRows.length; i++) {
 
 // 7. Select password input by name and change it's type
 var passwordInput = document.getElementsByName('password')[0];
-passwordInput.type = 'text';
+passwordInput.setAttribute('type', 'text');
+// passwordInput.type = 'text';
 
 // 8. Select all elements with class name red and change it to blue
+var redItems = document.getElementsByClassName('red');
+for (var i = 0; i < redItems.length; i++) {
+  var currentElement = redItems[i];
+  currentElement.classList.add('blue');
+}
+
+var blueItems = document.getElementsByClassName('blue');
+for (var i = 0; i < blueItems.length; i++) {
+  var currentElement = blueItems[i];
+  currentElement.classList.remove('red');
+}
 
 // 9. Add a paragraph element to div with id my-item
+var myNewParagraph = document.createElement('p');
+myNewParagraph.textContent = 'My new paragraph';
+myItem.appendChild(myNewParagraph);
+// myItem.innerHTML = '<p>My new paragraph</p>';
 
 // 10. Replace newly created paragraph with h1
+var myNewHeading = document.createElement('h1');
+myNewHeading.textContent = 'My fabulous heading!';
+myItem.replaceChild(myNewHeading, myNewParagraph);
