@@ -17,50 +17,52 @@ changeStyle(myItem, 'backgroundColor', 'yellow');
 var triangles = document.getElementsByClassName('triangle');
 changeStyle(triangles, 'backgroundColor', 'blue');
 
-// 3. Remove element by id my-item using old method and new method
-//myItem.remove();
-//myItem.parentNode.removeChild(myItem);
+// 3. Remove element by id my-item using old method removeChild() and new method remove()
+// myItem.remove();
 
 // 4. Get all paragraphs and add border around them
 var paragraphs = document.getElementsByTagName('p');
-changeStyle(paragraphs, 'border', 'dashed 2px rgba(155, 155, 155, .5)');
+changeStyle(paragraphs, 'border', 'dashed 2px rgba(155, 155, 155, .8)');
 
 // 5. Change text content from all paragraphs with it's data-zup attributes value
 var paragraphsWithDataZup = document.querySelectorAll('p[data-zup]');
 for (var i = 0; i < paragraphsWithDataZup.length; i++) {
-    var currentElement = paragraphsWithDataZup[i];
-    var data = currentElement.dataset;
-    currentElement.textContent = data.zup;
+  var currentElement = paragraphsWithDataZup[i];
+  currentElement.textContent = currentElement.dataset.zup;
 }
 
 // 6. Add class name fiery to all even <tr>
 var evenTableRows = document.querySelectorAll('tr:nth-child(even)');
 for (var i = 0; i < evenTableRows.length; i++) {
-    evenTableRows[i].classList.add('fiery');
+  var currentElement = evenTableRows[i];
+  currentElement.classList.add('fiery');
 }
 
 // 7. Select password input by name and change it's type
-document.querySelector('input[name="password"]').setAttribute('type', 'text');
+var passwordInput = document.getElementsByName('password')[0];
+passwordInput.setAttribute('type', 'text');
+// passwordInput.type = 'text';
 
 // 8. Select all elements with class name red and change it to blue
-var redClassElements = document.getElementsByClassName('red');
-
-for (var i = 0; i < redClassElements.length; i++) {
-    redClassElements[i].classList.add('blue');
+var redItems = document.getElementsByClassName('red');
+for (var i = 0; i < redItems.length; i++) {
+  var currentElement = redItems[i];
+  currentElement.classList.add('blue');
 }
 
-var blueClassElements = document.getElementsByClassName('blue');
-
-for (var i = 0; i < blueClassElements.length; i++) {
-    blueClassElements[i].classList.remove('red');
+var blueItems = document.getElementsByClassName('blue');
+for (var i = 0; i < blueItems.length; i++) {
+  var currentElement = blueItems[i];
+  currentElement.classList.remove('red');
 }
 
 // 9. Add a paragraph element to div with id my-item
-var paragraph = document.createElement('p');
-paragraph.textContent = 'My new paragraph!';
-myItem.appendChild(paragraph);
+var myNewParagraph = document.createElement('p');
+myNewParagraph.textContent = 'My new paragraph';
+myItem.appendChild(myNewParagraph);
+// myItem.innerHTML = '<p>My new paragraph</p>';
 
 // 10. Replace newly created paragraph with h1
-var heading = document.createElement('h1');
-heading.textContent = 'My new heading!';
-myItem.replaceChild(heading, paragraph);
+var myNewHeading = document.createElement('h1');
+myNewHeading.textContent = 'My fabulous heading!';
+myItem.replaceChild(myNewHeading, myNewParagraph);
