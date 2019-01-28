@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Scripting CSS</title>
+	<style>
+		.icon {
+			font-weight: bold;
+			font-size: 2em;
+		}
+
+		.icon:hover {
+			cursor: pointer;
+		}
+
+		@keyframes bubble {
+			0% {
+				transform: scale(1);
+			}
+
+			20% {
+				transform: scaleY(0.95) scaleX(1.05);
+			}
+
+			48% {
+				transform: scaleY(1.1) scaleX(0.9);
+			}
+
+			68% {
+				transform: scaleY(0.98) scaleX(1.02);
+			}
+
+			80% {
+				transform: scaleY(1.02) scaleX(0.98);
+			}
+
+			97%,
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.beautiful {
+			width: 200px;
+			height: 200px;
+			margin: 40px 20px;
+			padding: 20px;
+			border-radius: 50%;
+			background-image: radial-gradient(circle at 100px 100px, white, lightblue);
+			box-shadow: 0px 0px 20px 10px white;
+			animation: bubble 2s infinite;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="icon">+</div>
+	<p>Adjust my size!</p>
+	<div class="icon">-</div>
+
+	<!-- Div that is beautiful when the right class is applied -->
+	<div class="placeholder"></div>
+
+	<script src="scripting_css_example.js" charset="utf-8"></script>
+</body>
+
+</html>
