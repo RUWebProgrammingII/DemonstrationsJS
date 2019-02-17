@@ -94,6 +94,13 @@ var companyName = 'Bláa lónið hf.';
 // Conditionals
 
 // 1. Get the company Bláa lónið hf. and check if it exists using promises
+getIcelandicCompanyByName(companyName).then(function (data) {
+	if (data.hasOwnProperty('results') && data['results'].length > 0) {
+		console.log('It exists!');
+	} else {
+		throw new Error('It doesn\'t exist!');
+	}
+});
 
 function getBlueLagoon() {
 	getIcelandicCompanyByName(companyName).then(company => {
@@ -109,6 +116,14 @@ function getBlueLagoon() {
 //getBlueLagoon(); // ?
 
 // 2. Instead of using promises use async / await
+(async function () {
+	var data = await getIcelandicCompanyByName(companyName);
+	if (data.hasOwnProperty('results') && data['results'].length > 0) {
+		console.log('It exists!');
+	} else {
+		console.log('it doesn"t exist')
+	}
+})();
 
 async function getBlueLagoonAsync() {
     var company = await getIcelandicCompanyByName(companyName);
